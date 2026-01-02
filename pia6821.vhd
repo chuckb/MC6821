@@ -126,7 +126,6 @@ pia_read : process(	addr,	cs,
 										porta_data, portb_data,
 										porta_ctrl, portb_ctrl,
 						   			pa_i,       pb_i )
-variable count : integer;
 begin
       case addr is
 	     when "00" =>
@@ -271,7 +270,6 @@ end process;
 --
 ---------------------------------
 porta_direction : process ( porta_data, porta_ddr )
-variable count : integer;
 begin
   for count in 0 to 7 loop
     if porta_ddr(count) = '1' then
@@ -407,7 +405,6 @@ end process;
 --
 ---------------------------------
 portb_direction : process ( portb_data, portb_ddr )
-variable count : integer;
 begin
   for count in 0 to 7 loop
     if portb_ddr(count) = '1' then

@@ -1,0 +1,16 @@
+CAPI=2:
+name: chuckb:opencores:mc6821:0.0.2
+
+filesets:
+  rtl:
+    files:
+      - pia6821.vhd
+    file_type: vhdlSource
+
+targets:
+  default:
+    default_tool: ghdl
+    filesets: [rtl]
+    toplevel: pia6821 
+    tools:
+      ghdl: {analyze_options: [--std=08, -fsynopsys]}
